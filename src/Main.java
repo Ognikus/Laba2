@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void Task1(){
@@ -33,12 +35,11 @@ public class Main {
         System.out.println("result: " + result);
 
     }
-//Доделать
     public static void Task5(){
-        long l = 1234_564_890L;
+        long l =  1234_564_890L;
         int x = 0b1000_1100_1010;
-        double m = 110_987_654_6299.123_34;
-        float f = l++ + 10 + ++x - (float) m;
+        double m = (byte) 110_987_654_6299.123_34;
+        float f = l+ + 10 + ++x - (float) m;
         l = (long) f / 1000;
         System.out.println(l);
 
@@ -46,9 +47,9 @@ public class Main {
     public static void Task6(){
         int a = 50;
         int b = 17;
-        double d = (float) a / b;
+        double d = (double) a / b;
 
-        System.out.println((float) d);
+        System.out.println(d);
 
     }
     public static void Task7(){
@@ -56,8 +57,8 @@ public class Main {
         int b = 4;
         int c = 3;
         int e = 2;
-        double d = (byte) a + (double) b / c / e;
-        System.out.println((int)d);
+        double d = (byte) a + b / c / e;
+        System.out.println(d);
 
     }
 
@@ -66,19 +67,42 @@ public class Main {
         int b = 4;
         int c = 3;
         int e = 2;
-        double d = a + (float) b / c / e;
-        System.out.println((float) d);
+        double d = a + (float) (b / c) / e;
+        System.out.println(d);
 
     }
     public static void main(String[] args) {
-        //Task1();
-        //Task2();
-        //Task3();
-        //Task4();
-        //Task5();
-        //Task6();
-        //Task7();
-        Task8();
+        boolean f = true;
+        while (f) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Выберите задание из списка ниже:");
+            System.out.println("-----------------------------------------------------------------------------------------------");
+            System.out.println("""
+                    1.Задание 1
+                    2.Задание 2
+                    3.Задание 3
+                    4.Задание 4
+                    5.Задание 5
+                    6.Задание 6
+                    7.Задание 7
+                    8.Задание 8
+                    Введите 0 чтобы выйти из программы""");
+            System.out.println("-----------------------------------------------------------------------------------------------");
+            System.out.print("Введите Номер задания: ");
+            int n = scanner.nextInt();
+            switch (n) {
+                case 0 -> f = false;
+                case 1 -> Task1();
+                case 2 -> Task2();
+                case 3 -> Task3();
+                case 4 -> Task4();
+                case 5 -> Task5();
+                case 6 -> Task6();
+                case 7 -> Task7();
+                case 8 -> Task8();
+                default -> System.out.println("Введите указанные номера заданий!");
 
+            }
+        }
     }
 }
